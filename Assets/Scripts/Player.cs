@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
 
     public void GoTo(Vector3 position)
     {
+        if (float.IsInfinity(position.x)) { return; }
         agent.destination = position;
         targetIndicator.transform.position = position;
         targetIndicator.SetActive(true);
@@ -25,7 +26,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (agent.remainingDistance <= agent.stoppingDistance)
+        if (agent.isOnNavMesh && agent.remainingDistance <= agent.stoppingDistance)
         {
             targetIndicator.SetActive(false);
         } else
