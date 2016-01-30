@@ -84,7 +84,7 @@ NavMeshSettings:
     minRegionArea: 2
     cellSize: 0.16666667
     manualCellSize: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 8706f545df50ac342bab2094a84c9a5b, type: 2}
 --- !u!1 &294666963
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,7 +363,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 767712004}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: -4.17, y: 0.01999998, z: -14.779999}
+  m_LocalPosition: {x: -4.17, y: 0.01999998, z: -12.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 977813354}
@@ -459,8 +459,8 @@ GameObject:
   m_Name: Hut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &930284353
 MeshRenderer:
@@ -514,8 +514,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 930284352}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1, y: 3.14, z: -14.2}
-  m_LocalScale: {x: 26.677443, y: 6.958207, z: 19.324352}
+  m_LocalPosition: {x: 3.5, y: 3.14, z: -14.2}
+  m_LocalScale: {x: 21.596684, y: 6.958207, z: 19.324352}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -545,7 +545,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 977813353}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.4, y: -1.23, z: -0.44}
+  m_LocalPosition: {x: -3.54, y: -5.25, z: -0.44}
   m_LocalScale: {x: 1, y: 2.2667713, z: 5.909704}
   m_Children: []
   m_Father: {fileID: 767712005}

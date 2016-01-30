@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class AreaManager : MonoBehaviour
@@ -8,31 +9,14 @@ public class AreaManager : MonoBehaviour
 
     public static AreaManager instance;
 
+    private string currentArea;
+    private float lastChangeTime = 0;
+
     void Start()
     {
         instance = this;
 
-        Scene[] allScenes = SceneManager.GetAllScenes();
-        foreach (Scene scene in allScenes)
-        {
-            if (scene.name != BaseScene && scene.name != FirstScene && scene.isLoaded)
-            {
-                Debug.Log("unloading scene " + scene.name);
-                bool wasUnloaded = SceneManager.UnloadScene(scene.buildIndex);
-                Debug.Log("success? " + wasUnloaded);
-            }
-        }
-
-        if (!SceneManager.GetSceneByName(FirstScene).isLoaded)
-        {
-            Debug.Log("loading first scene " + FirstScene);
-           // SceneManager.LoadScene(FirstScene, LoadSceneMode.Additive);
-        }
-
-
-
-        Scene firstScene = SceneManager.GetSceneByName(FirstScene);
-        SwitchToCameraInScene(firstScene);
+        StartCoroutine("ChangeAreaAsync", FirstScene);
     }
 
     private void SwitchToCameraInScene(Scene scene)
@@ -43,13 +27,16 @@ public class AreaManager : MonoBehaviour
             camera.gameObject.SetActive(false);
         }
 
-        foreach (GameObject root in scene.GetRootGameObjects())
+        if (scene.isLoaded)
         {
-            Camera camera = root.GetComponent<Camera>();
-            if (camera != null)
+            foreach (GameObject root in scene.GetRootGameObjects())
             {
-                camera.gameObject.SetActive(true);
-                camera.enabled = true;
+                Camera camera = root.GetComponent<Camera>();
+                if (camera != null)
+                {
+                    camera.gameObject.SetActive(true);
+                    camera.enabled = true;
+                }
             }
         }
     }
@@ -59,21 +46,42 @@ public class AreaManager : MonoBehaviour
         return instance;
     }
 
-    public void ChangeArea(string sceneName)
+    IEnumerator ChangeAreaAsync(string sceneName)
     {
         Debug.Log("change area to " + sceneName);
 
+        currentArea = sceneName;
+        lastChangeTime = Time.time;
+
+        yield return SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+
         Scene newScene = SceneManager.GetSceneByName(sceneName);
-        SceneManager.LoadScene(newScene.buildIndex, LoadSceneMode.Additive);
-        SwitchToCameraInScene(newScene);
+        if (newScene.buildIndex != -1)
+        {
+            SwitchToCameraInScene(newScene);
+        }
 
         Scene[] allScenes = SceneManager.GetAllScenes();
-        foreach (Scene scene in allScenes)
+        for (int s = 0; s < SceneManager.sceneCount; s++)
         {
+            Scene scene = SceneManager.GetSceneAt(s);
             if (scene.name != BaseScene && scene.name != sceneName && scene.isLoaded)
             {
-                SceneManager.UnloadScene(scene.buildIndex);
+                Debug.Log("unload scene " + scene.name);
+                SceneManager.UnloadScene(scene.name);
+
             }
         }
+
+        yield return null;
+    }
+
+    public void ChangeArea(string sceneName)
+    {
+        if (currentArea == sceneName) return;
+
+        if (Time.time - lastChangeTime < 2) return;
+
+        StartCoroutine("ChangeAreaAsync", sceneName);
     }
 }
