@@ -24,7 +24,7 @@ public class ClickControl : MonoBehaviour {
                     if (item.CanPickup())
                     {
                         item.Pickup(Player.gameObject);
-                        item.transform.parent = Player.Inventory.transform;
+                        Player.Inventory.AddItem(item);
                     }
                 } else
                 {
