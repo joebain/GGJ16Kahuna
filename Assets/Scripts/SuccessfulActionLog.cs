@@ -2,19 +2,16 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Action : ScriptableObject
-{
-	public bool result;
-	public string objectName;
-}
 
 [ExecuteInEditMode()]
 public class SuccessfulActionLog : MonoBehaviour {
 
-	public List<Action> actions = new List<Action>();
+	public List<string> actions = new List<string>();
+	public string actionOnMatch;
 
 	public SuccessfulActionLog other;
 	public bool match = false;
+	public bool done = false;
 
 	// Use this for initialization
 	void Start () {
@@ -37,8 +34,7 @@ public class SuccessfulActionLog : MonoBehaviour {
 			bool foundThisAction = false;
 			while (theirIndex < other.actions.Count)
 			{
-				if (other.actions[theirIndex].objectName == actions[i].objectName && 
-					other.actions[theirIndex].result == actions[i].result)
+				if (other.actions[theirIndex] == actions[i])
 				{
 					foundThisAction = true;
 				}

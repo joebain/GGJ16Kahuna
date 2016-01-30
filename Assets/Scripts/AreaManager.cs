@@ -12,9 +12,13 @@ public class AreaManager : MonoBehaviour
     private string currentArea;
     private float lastChangeTime = 0;
 
+	Player player;
+
     void Start()
     {
         instance = this;
+
+		player = GameObject.FindObjectOfType<Player>();
 
         StartCoroutine("ChangeAreaAsync", FirstScene);
     }
@@ -71,7 +75,9 @@ public class AreaManager : MonoBehaviour
                 SceneManager.UnloadScene(scene.name);
 
             }
-        }
+		}
+
+		player.RefreshLogs();
 
         yield return null;
     }
