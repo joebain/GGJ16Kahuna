@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 public class Player : MonoBehaviour
 {
@@ -8,12 +9,23 @@ public class Player : MonoBehaviour
 
     private GameObject targetIndicator;
 
+	public SuccessfulActionLog log;
+	public List<SuccessfulActionLog> logs;
+
     void Start()
     {
+		log = gameObject.AddComponent<SuccessfulActionLog>();
         agent = GetComponent<NavMeshAgent>();
 
         targetIndicator = transform.Find("Target").gameObject;
         targetIndicator.SetActive(false);
+	}
+
+	public void RefreshLogs()
+	{
+		logs = new List<SuccessfulActionLog>();
+		logs.AddRange(GameObject.FindObjectsOfType<SuccessfulActionLog>());
+		logs.Remove(log);
     }
 
     public void GoTo(Vector3 position)
@@ -34,4 +46,17 @@ public class Player : MonoBehaviour
             targetIndicator.transform.position = agent.destination;
         }
     }
+
+	void OnTriggerEnter(Collider other)
+	{
+		SuccessfulActionLog otherLog = other.gameObject.GetComponent<SuccessfulActionLog>();
+		if (otherLog != null && !otherLog.done)
+		{
+			if (otherLog.TestAgainst(log))
+			{
+				log.actions.Add(otherLog.actionOnMatch);
+				otherLog.done = true;
+			}
+		}
+	}
 }
