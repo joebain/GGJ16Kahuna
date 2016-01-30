@@ -15,7 +15,7 @@ public class AreaManager : MonoBehaviour
         Scene[] allScenes = SceneManager.GetAllScenes();
         foreach (Scene scene in allScenes)
         {
-            if (scene.name != BaseScene && scene.isLoaded)
+            if (scene.name != BaseScene && scene.name != FirstScene && scene.isLoaded)
             {
                 Debug.Log("unloading scene " + scene.name);
                 bool wasUnloaded = SceneManager.UnloadScene(scene.buildIndex);
@@ -29,6 +29,29 @@ public class AreaManager : MonoBehaviour
            // SceneManager.LoadScene(FirstScene, LoadSceneMode.Additive);
         }
 
+
+
+        Scene firstScene = SceneManager.GetSceneByName(FirstScene);
+        SwitchToCameraInScene(firstScene);
+    }
+
+    private void SwitchToCameraInScene(Scene scene)
+    {
+        foreach (Camera camera in Camera.allCameras)
+        {
+            camera.enabled = false;
+            camera.gameObject.SetActive(false);
+        }
+
+        foreach (GameObject root in scene.GetRootGameObjects())
+        {
+            Camera camera = root.GetComponent<Camera>();
+            if (camera != null)
+            {
+                camera.gameObject.SetActive(true);
+                camera.enabled = true;
+            }
+        }
     }
 
     public static AreaManager Get()
@@ -40,7 +63,9 @@ public class AreaManager : MonoBehaviour
     {
         Debug.Log("change area to " + sceneName);
 
-        SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+        Scene newScene = SceneManager.GetSceneByName(sceneName);
+        SceneManager.LoadScene(newScene.buildIndex, LoadSceneMode.Additive);
+        SwitchToCameraInScene(newScene);
 
         Scene[] allScenes = SceneManager.GetAllScenes();
         foreach (Scene scene in allScenes)
