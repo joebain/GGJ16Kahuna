@@ -1,15 +1,32 @@
 fileFormatVersion: 2
 guid: de9c74e304a4d414aa6ef017d7da2370
-timeCreated: 1454172073
+timeCreated: 1454188856
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
+    100000: leg_l
+    100002: leg_r
+    100004: leg_r001
+    100006: playerone
+    100008: //RootNode
+    400000: leg_l
+    400002: leg_r
+    400004: leg_r001
+    400006: playerone
+    400008: //RootNode
+    2300000: leg_l
+    2300002: leg_r
+    2300004: leg_r001
+    2300006: playerone
+    3300000: leg_l
+    3300002: leg_r
+    3300004: leg_r001
+    3300006: playerone
     4300000: playerone
+    4300002: leg_l
+    4300004: leg_r
+    4300006: leg_r001
     7400000: Take 001
     9500000: //RootNode
   materials:
