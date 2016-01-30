@@ -8,6 +8,8 @@ public class SuccessfulActionLog : MonoBehaviour {
 
 	public List<string> actions = new List<string>();
 	public string actionOnMatch;
+	public string textOnMatch;
+	public string textOnFail;
 
 	public SuccessfulActionLog other;
 	public bool match = false;

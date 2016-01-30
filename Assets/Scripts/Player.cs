@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
 using System.Collections.Generic;
 
 public class Player : MonoBehaviour
@@ -12,6 +14,9 @@ public class Player : MonoBehaviour
 	public SuccessfulActionLog log;
 	public List<SuccessfulActionLog> logs;
 
+	GameObject textBox;
+	Text t;
+
     void Start()
     {
 		log = gameObject.AddComponent<SuccessfulActionLog>();
@@ -19,6 +24,10 @@ public class Player : MonoBehaviour
 
         targetIndicator = transform.Find("Target").gameObject;
         targetIndicator.SetActive(false);
+
+		textBox = GameObject.Find("textbox");
+		t = GameObject.Find("report").GetComponent<Text>();
+		textBox.SetActive(false);
 	}
 
 	public void RefreshLogs()
@@ -56,7 +65,28 @@ public class Player : MonoBehaviour
 			{
 				log.actions.Add(otherLog.actionOnMatch);
 				otherLog.done = true;
+				StartCoroutine(TextBox(otherLog.textOnMatch));
+			}
+			else if (otherLog.textOnFail != null && otherLog.textOnFail.Length > 0)
+			{
+				StartCoroutine(TextBox(otherLog.textOnFail));
 			}
 		}
+	}
+
+	IEnumerator TextBox(string report)
+	{
+		t.text = report;
+
+		textBox.SetActive(true);
+
+		while (!Input.anyKeyDown)
+		{
+			yield return null; 
+		}
+
+		textBox.SetActive(false);
+
+		yield return null;
 	}
 }

@@ -689,6 +689,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actions: []
   actionOnMatch: door_tried_1
+  textOnMatch: I can't leave yet. I need to wash my hands.
+  textOnFail: 
   other: {fileID: 0}
   match: 0
   done: 0
@@ -703,7 +705,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 12
 --- !u!1 &934462777
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,6 +812,8 @@ MonoBehaviour:
   actions:
   - door_tried_1
   actionOnMatch: washed_hands_1
+  textOnMatch: OK, I've washed my hands. They should be free from disease now.
+  textOnFail: 
   other: {fileID: 0}
   match: 0
   done: 0
@@ -824,7 +828,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!65 &1153760754
 BoxCollider:
   m_ObjectHideFlags: 0
