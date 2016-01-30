@@ -26,7 +26,11 @@ public class ClickControl : MonoBehaviour {
                         item.Pickup(Player.gameObject);
                         item.transform.parent = Player.Inventory.transform;
                     }
+                } else
+                {
+                    Player.GoTo(hitInfo.point);
                 }
+
             }
         }
     }
