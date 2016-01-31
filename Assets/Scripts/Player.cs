@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
 	GameObject textBox;
 	Text t;
 
+	string instruction;
+
     void Start()
     {
 		log = gameObject.AddComponent<SuccessfulActionLog>();
@@ -76,6 +78,7 @@ public class Player : MonoBehaviour
 			else if (otherLog.textOnFail != null && otherLog.textOnFail.Length > 0)
 			{
 				StartCoroutine(TextBox(otherLog.textOnFail));
+				instruction = otherLog.instruction;
 			}
 		}
 	}
@@ -92,6 +95,15 @@ public class Player : MonoBehaviour
 		}
 
 		textBox.SetActive(false);
+
+		switch (instruction)
+		{
+		default: break;
+		case "open door":
+			{
+				GameObject.Find("door_collision").SetActive(false);
+			} break;
+		}
 
 		yield return null;
 	}
