@@ -43,6 +43,7 @@ public class Player : MonoBehaviour
 
     public void GoTo(Vector3 position)
     {
+		if (textBox.activeSelf) return;
         if (float.IsInfinity(position.x)) { return; }
 
         agent.destination = position;
