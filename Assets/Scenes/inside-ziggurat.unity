@@ -277,6 +277,68 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 210776649}
   m_Mesh: {fileID: 4300000, guid: d91bb680fbfa7d24bbb73e38b9789c4e, type: 3}
+--- !u!1 &218510382
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 218510383}
+  - 114: {fileID: 218510385}
+  - 65: {fileID: 218510384}
+  m_Layer: 0
+  m_Name: sink_logic (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &218510383
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 218510382}
+  m_LocalRotation: {x: 0.005683281, y: 0.13735385, z: -0.009880544, w: 0.99045646}
+  m_LocalPosition: {x: -70, y: 2.6676335, z: -5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 771014979}
+  m_RootOrder: 3
+--- !u!65 &218510384
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 218510382}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.3339815, y: 5.10878, z: 7.3197937}
+  m_Center: {x: -0.16992143, y: -0.7415306, z: -0.24738193}
+--- !u!114 &218510385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 218510382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b166409984d8a04418dd7d7036386ff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actions:
+  - win_3
+  actionOnMatch: win_4
+  textOnMatch: I guess I do these things every day and none of you die, so there must
+    be something to it.
+  textOnFail: 
+  instruction: game over
+  other: {fileID: 0}
+  match: 0
+  done: 0
 --- !u!1 &287129732
 GameObject:
   m_ObjectHideFlags: 0
@@ -977,6 +1039,37 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 753007036}
   m_Mesh: {fileID: 4300000, guid: d9b0ffe824ab1fd4daebb9130f077f85, type: 3}
+--- !u!1 &771014978
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 771014979}
+  m_Layer: 0
+  m_Name: Logic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &771014979
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 771014978}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2068514749}
+  - {fileID: 1891509817}
+  - {fileID: 781249046}
+  - {fileID: 218510383}
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
 --- !u!1001 &771643498
 Prefab:
   m_ObjectHideFlags: 0
@@ -1023,6 +1116,67 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d502eb4a865d3d4f98f58fed1d3cce8, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &781249045
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 781249046}
+  - 114: {fileID: 781249048}
+  - 65: {fileID: 781249047}
+  m_Layer: 0
+  m_Name: sink_logic (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &781249046
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 781249045}
+  m_LocalRotation: {x: 0.005683281, y: 0.13735385, z: -0.009880544, w: 0.99045646}
+  m_LocalPosition: {x: -70, y: 2.6676335, z: -5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 771014979}
+  m_RootOrder: 2
+--- !u!65 &781249047
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 781249045}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.3339815, y: 5.10878, z: 7.3197937}
+  m_Center: {x: -0.16992143, y: -0.7415306, z: -0.24738193}
+--- !u!114 &781249048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 781249045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b166409984d8a04418dd7d7036386ff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actions:
+  - win_2
+  actionOnMatch: win_3
+  textOnMatch: '"We offer you all the comforts of the village."'
+  textOnFail: 
+  instruction: 
+  other: {fileID: 0}
+  match: 0
+  done: 0
 --- !u!1 &819833260
 GameObject:
   m_ObjectHideFlags: 0
@@ -1338,7 +1492,7 @@ Transform:
   m_LocalScale: {x: 1.9116093, y: 1, z: 1.8830394}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1 &1243659924
 GameObject:
   m_ObjectHideFlags: 0
@@ -1901,6 +2055,67 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1776886781}
   m_Mesh: {fileID: 4300000, guid: d9b0ffe824ab1fd4daebb9130f077f85, type: 3}
+--- !u!1 &1891509816
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1891509817}
+  - 114: {fileID: 1891509819}
+  - 65: {fileID: 1891509818}
+  m_Layer: 0
+  m_Name: sink_logic (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1891509817
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1891509816}
+  m_LocalRotation: {x: 0.005683281, y: 0.13735385, z: -0.009880544, w: 0.99045646}
+  m_LocalPosition: {x: -70, y: 2.6676335, z: -5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 771014979}
+  m_RootOrder: 1
+--- !u!65 &1891509818
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1891509816}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.3339815, y: 5.10878, z: 7.3197937}
+  m_Center: {x: -0.16992143, y: -0.7415306, z: -0.24738193}
+--- !u!114 &1891509819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1891509816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b166409984d8a04418dd7d7036386ff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actions:
+  - win_1
+  actionOnMatch: win_2
+  textOnMatch: '"Please continue to show us the way."'
+  textOnFail: 
+  instruction: 
+  other: {fileID: 0}
+  match: 0
+  done: 0
 --- !u!1 &1896715180
 GameObject:
   m_ObjectHideFlags: 0
@@ -1965,3 +2180,63 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1896715180}
   m_Mesh: {fileID: 4300000, guid: d91bb680fbfa7d24bbb73e38b9789c4e, type: 3}
+--- !u!1 &2068514748
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2068514749}
+  - 114: {fileID: 2068514751}
+  - 65: {fileID: 2068514750}
+  m_Layer: 0
+  m_Name: sink_logic (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2068514749
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2068514748}
+  m_LocalRotation: {x: 0.005683281, y: 0.13735385, z: -0.009880544, w: 0.99045646}
+  m_LocalPosition: {x: -70, y: 2.6676335, z: -5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 771014979}
+  m_RootOrder: 0
+--- !u!65 &2068514750
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2068514748}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.3339815, y: 5.10878, z: 7.3197937}
+  m_Center: {x: -0.16992143, y: -0.7415306, z: -0.24738193}
+--- !u!114 &2068514751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2068514748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b166409984d8a04418dd7d7036386ff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actions: []
+  actionOnMatch: win_1
+  textOnMatch: '"Every day you show us how not to anger the Gods."'
+  textOnFail: 
+  instruction: 
+  other: {fileID: 0}
+  match: 0
+  done: 0

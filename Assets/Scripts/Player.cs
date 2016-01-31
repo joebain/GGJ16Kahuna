@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,6 +14,8 @@ public class Player : MonoBehaviour
 
 	public SuccessfulActionLog log;
 	public List<SuccessfulActionLog> logs;
+
+	float timeBox;
 
 	GameObject textBox;
 	Text t;
@@ -125,11 +128,12 @@ public class Player : MonoBehaviour
 	IEnumerator TextBox(string report)
 	{
 		t.text = report;
+		timeBox = Time.timeSinceLevelLoad;
 
 		textBox.SetActive(true);
 		yield return null; 
 
-		while (!Input.anyKeyDown)
+		while (!Input.anyKeyDown && Time.timeSinceLevelLoad < timeBox + 2f)
 		{
 			yield return null; 
 		}
@@ -161,6 +165,10 @@ public class Player : MonoBehaviour
 				{
 					agent.GoToTemple();
 				}
+			} break;
+		case "game over":
+			{
+				SceneManager.LoadScene("splash");
 			} break;
 		}
 

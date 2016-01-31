@@ -64,6 +64,6 @@ public class NPC : MonoBehaviour
 	public void GoToTemple()
 	{
 		state = State.Done;
-		navAgent.destination = new Vector3(-39,2,-26);
+		navAgent.destination = new Vector3(-54,2,0);
 	}
 }
