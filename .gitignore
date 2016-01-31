@@ -38,3 +38,5 @@ Thumbs.db
 ## other
 checkpoint_times/
 *.swp
+Assets/Scenes/outside-hut.unity.orig
+Assets/Scenes/outside-ziggurat.unity.orig

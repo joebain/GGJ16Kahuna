@@ -15,3 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/outside-ziggurat.unity
   - enabled: 1
     path: Assets/Scenes/inside-ziggurat.unity
+  - enabled: 1
+    path: Assets/Scenes/splash.unity
+  - enabled: 1
+    path: Assets/Scenes/credits.unity

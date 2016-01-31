@@ -503,7 +503,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 490362582}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.004, y: 0, z: -0}
+  m_LocalPosition: {x: 0.002, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1828581609}
@@ -1284,6 +1284,7 @@ GameObject:
   - 81: {fileID: 861126196}
   - 45: {fileID: 861126195}
   - 114: {fileID: 861126201}
+  - 114: {fileID: 861126202}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -1298,7 +1299,7 @@ Skybox:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 861126194}
   m_Enabled: 1
-  m_CustomSkybox: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_CustomSkybox: {fileID: 2100000, guid: ff330f6226d1d44838ee63a8824f8def, type: 2}
 --- !u!81 &861126196
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1328,7 +1329,7 @@ Camera:
   m_GameObject: {fileID: 861126194}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.1544118, g: 1, b: 0.9999998, a: 0.019607844}
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -1377,15 +1378,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0923359e9e352a4b9b11c7b7161ad67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Radius: 0.754
+  m_Radius: 0.322
   m_SampleCount: 1
-  m_OcclusionIntensity: 2.76
-  m_Blur: 2
+  m_OcclusionIntensity: 1.58
+  m_Blur: 3
   m_Downsampling: 2
   m_OcclusionAttenuation: 1
   m_MinZ: 0.01
   m_SSAOShader: {fileID: 4800000, guid: 43ca18288c424f645aaa1e9e07f04c50, type: 3}
   m_RandomTexture: {fileID: 2800000, guid: a181ca8e3c62f3e4b8f183f6c586b032, type: 3}
+--- !u!114 &861126202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 861126194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4975a6e437fc3b149a8cd508ce5bdd69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  threshold: 0.154
+  intensity: 0.58
+  blurSize: 1
+  blurIterations: 1
+  blurType: 0
+  fastBloomShader: {fileID: 4800000, guid: 68a00c837b82e4c6d92e7da765dc5f1d, type: 3}
 --- !u!1 &892002165
 GameObject:
   m_ObjectHideFlags: 0
