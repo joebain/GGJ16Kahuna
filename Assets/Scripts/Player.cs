@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,6 +14,8 @@ public class Player : MonoBehaviour
 
 	public SuccessfulActionLog log;
 	public List<SuccessfulActionLog> logs;
+
+	float timeBox;
 
 	GameObject textBox;
 	Text t;
@@ -80,8 +83,11 @@ public class Player : MonoBehaviour
 				log.actions.Add(otherLog.actionOnMatch);
 				otherLog.done = true;
 				instruction = otherLog.instruction; Debug.Log("set instruction to " + instruction);
-                sfx.PlayPositive();
-                StartCoroutine(TextBox(otherLog.textOnMatch));
+				bool skip = false;
+				if (instruction == "skip if torches doused" && Torch.phase == 3) skip = true;
+				sfx.PlayPositive();
+				if (!skip)
+					StartCoroutine(TextBox(otherLog.textOnMatch));
 			}
 			else if (otherLog.textOnFail != null && otherLog.textOnFail.Length > 0)
 			{
@@ -106,11 +112,12 @@ public class Player : MonoBehaviour
 	IEnumerator TextBox(string report)
 	{
 		t.text = report;
+		timeBox = Time.timeSinceLevelLoad;
 
 		textBox.SetActive(true);
 		yield return null; 
 
-		while (!Input.anyKeyDown)
+		while (!Input.anyKeyDown && Time.timeSinceLevelLoad < timeBox + 2f)
 		{
 			yield return null; 
 		}
@@ -124,6 +131,28 @@ public class Player : MonoBehaviour
 			{
 				Debug.Log("opening the door");
 				GameObject.Find("door_collision").SetActive(false);
+			} break;
+		case "villagers_come":
+			{
+				// send all villagers to player
+				NPC[] agents = GameObject.FindObjectsOfType<NPC>();
+				foreach (NPC agent in agents)
+				{
+					agent.WalkToPlayer();
+				}
+			} break;
+		case "send_ziggurat":
+			{
+				// send all villagers to player
+				NPC[] agents = GameObject.FindObjectsOfType<NPC>();
+				foreach (NPC agent in agents)
+				{
+					agent.GoToTemple();
+				}
+			} break;
+		case "game over":
+			{
+				SceneManager.LoadScene("splash");
 			} break;
 		}
 
