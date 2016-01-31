@@ -80,7 +80,10 @@ public class Player : MonoBehaviour
 				log.actions.Add(otherLog.actionOnMatch);
 				otherLog.done = true;
 				instruction = otherLog.instruction; Debug.Log("set instruction to " + instruction);
-				StartCoroutine(TextBox(otherLog.textOnMatch));
+				bool skip = false;
+				if (instruction == "skip if torches doused" && Torch.phase == 3) skip = true;
+				if (!skip)
+					StartCoroutine(TextBox(otherLog.textOnMatch));
 			}
 			else if (otherLog.textOnFail != null && otherLog.textOnFail.Length > 0)
 			{

@@ -4,7 +4,7 @@ public class Torch : MonoBehaviour
 {
     private bool PlayerNear = false;
     protected bool Active = false;
-	static int phase = 0;
+	public static int phase = 0;
 
     private Player player;
 
@@ -141,7 +141,11 @@ public class Torch : MonoBehaviour
 					player.ShowTextBox("It's dangerous and dirty, but sometimes I need the light.");
 					shownFireMessage = true;
 				}
-				if (phase == 1 && torches[0].Active && torches[1].Active && torches[2].Active) phase = 2;
+				if (phase == 1 && torches[0].Active && torches[1].Active && torches[2].Active)
+				{
+					player.log.actions.Add("torches_relit");
+					phase = 2;
+				}
 					
             }
         }
