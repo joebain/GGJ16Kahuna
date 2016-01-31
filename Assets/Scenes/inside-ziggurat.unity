@@ -1457,6 +1457,70 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 994726201}
   m_Mesh: {fileID: 4300000, guid: d9b0ffe824ab1fd4daebb9130f077f85, type: 3}
+--- !u!1 &1053883479
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 144178, guid: 8d0fa4795577542d3a962163a4a76503, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1053883480}
+  - 114: {fileID: 1053883482}
+  - 65: {fileID: 1053883481}
+  m_Layer: 0
+  m_Name: sink_logic (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1053883480
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 481334, guid: 8d0fa4795577542d3a962163a4a76503, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1053883479}
+  m_LocalRotation: {x: 0.005683281, y: 0.13735385, z: -0.009880544, w: 0.99045646}
+  m_LocalPosition: {x: -70, y: 2.6676335, z: -5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1557676760}
+  m_RootOrder: 5
+--- !u!65 &1053883481
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6535822, guid: 8d0fa4795577542d3a962163a4a76503,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1053883479}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.3339815, y: 5.10878, z: 7.3197937}
+  m_Center: {x: -0.16992143, y: -0.7415306, z: -0.24738193}
+--- !u!114 &1053883482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11490976, guid: 8d0fa4795577542d3a962163a4a76503,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1053883479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b166409984d8a04418dd7d7036386ff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actions:
+  - win_5
+  actionOnMatch: win_6
+  textOnMatch: If you don't, terrible things will happen! The skies will open and
+    the seas will boil!
+  textOnFail: 
+  instruction: game over
+  other: {fileID: 0}
+  match: 0
+  done: 0
 --- !u!1 &1186402566
 GameObject:
   m_ObjectHideFlags: 0
@@ -1764,6 +1828,70 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d502eb4a865d3d4f98f58fed1d3cce8, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1330031758
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 144178, guid: 8d0fa4795577542d3a962163a4a76503, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1330031759}
+  - 114: {fileID: 1330031761}
+  - 65: {fileID: 1330031760}
+  m_Layer: 0
+  m_Name: sink_logic (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1330031759
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 481334, guid: 8d0fa4795577542d3a962163a4a76503, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1330031758}
+  m_LocalRotation: {x: 0.005683281, y: 0.13735385, z: -0.009880544, w: 0.99045646}
+  m_LocalPosition: {x: -70, y: 2.6676335, z: -5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1557676760}
+  m_RootOrder: 4
+--- !u!65 &1330031760
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6535822, guid: 8d0fa4795577542d3a962163a4a76503,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1330031758}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.3339815, y: 5.10878, z: 7.3197937}
+  m_Center: {x: -0.16992143, y: -0.7415306, z: -0.24738193}
+--- !u!114 &1330031761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11490976, guid: 8d0fa4795577542d3a962163a4a76503,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1330031758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b166409984d8a04418dd7d7036386ff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actions:
+  - win_4
+  actionOnMatch: win_5
+  textOnMatch: Everybody! The torches must be put out in the correct order. Repeat
+    these mantras daily.
+  textOnFail: 
+  instruction: game over
+  other: {fileID: 0}
+  match: 0
+  done: 0
 --- !u!1 &1373348027
 GameObject:
   m_ObjectHideFlags: 0
@@ -1979,12 +2107,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11490976, guid: 8d0fa4795577542d3a962163a4a76503, type: 2}
       propertyPath: textOnMatch
-      value: I guess I do these things every day for months now and none of you died,
-        so there must be something to it.
+      value: I guess I've done these things every day for months now and none of you
+        has died, so there must be something to it.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8d0fa4795577542d3a962163a4a76503, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &1557676760 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 403230, guid: 8d0fa4795577542d3a962163a4a76503, type: 2}
+  m_PrefabInternal: {fileID: 1557676759}
 --- !u!1 &1599823678
 GameObject:
   m_ObjectHideFlags: 0
@@ -2333,3 +2465,66 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2856f36c5dc4f1e419134ca6f1671e3c, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &2118691429
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 144178, guid: 8d0fa4795577542d3a962163a4a76503, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2118691430}
+  - 114: {fileID: 2118691432}
+  - 65: {fileID: 2118691431}
+  m_Layer: 0
+  m_Name: sink_logic (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2118691430
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 481334, guid: 8d0fa4795577542d3a962163a4a76503, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2118691429}
+  m_LocalRotation: {x: 0.005683281, y: 0.13735385, z: -0.009880544, w: 0.99045646}
+  m_LocalPosition: {x: -70, y: 2.6676335, z: -5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1557676760}
+  m_RootOrder: 6
+--- !u!65 &2118691431
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6535822, guid: 8d0fa4795577542d3a962163a4a76503,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2118691429}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.3339815, y: 5.10878, z: 7.3197937}
+  m_Center: {x: -0.16992143, y: -0.7415306, z: -0.24738193}
+--- !u!114 &2118691432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11490976, guid: 8d0fa4795577542d3a962163a4a76503,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2118691429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b166409984d8a04418dd7d7036386ff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actions:
+  - win_6
+  actionOnMatch: win_7
+  textOnMatch: In about a month, we'll make a human sacrifice!
+  textOnFail: 
+  instruction: game over
+  other: {fileID: 0}
+  match: 0
+  done: 0
