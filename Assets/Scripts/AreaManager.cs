@@ -14,11 +14,15 @@ public class AreaManager : MonoBehaviour
 
 	Player player;
 
+    private AudioSource sfx;
+
     void Start()
     {
         instance = this;
 
 		player = GameObject.FindObjectOfType<Player>();
+
+        sfx = GetComponent<AudioSource>();
 
         StartCoroutine("ChangeAreaAsync", FirstScene);
     }
@@ -87,6 +91,8 @@ public class AreaManager : MonoBehaviour
         if (currentArea == sceneName) return;
 
         if (Time.time - lastChangeTime < 2) return;
+
+        sfx.Play();
 
         StartCoroutine("ChangeAreaAsync", sceneName);
     }

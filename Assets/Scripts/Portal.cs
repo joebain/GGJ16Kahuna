@@ -3,7 +3,7 @@
 public class Portal : MonoBehaviour {
 
     public string SceneToLoad;
-    
+
     void OnTriggerEnter(Collider other)
     {
         Debug.Log("portal trigger " + other.name);
