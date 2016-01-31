@@ -6,6 +6,7 @@ public class Portal : MonoBehaviour {
     
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log("portal trigger " + other.name);
         Player player = other.GetComponent<Player>();
         if (player != null)
         {

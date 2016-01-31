@@ -15,7 +15,8 @@ public class ClickControl : MonoBehaviour {
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hitInfo = new RaycastHit();
-            bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo);
+            LayerMask clickableLayer = LayerMask.NameToLayer("Clickable");
+            bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo);//, clickableLayer);
             if (hit)
             {
                 Item item = hitInfo.transform.GetComponent<Item>();
@@ -28,6 +29,7 @@ public class ClickControl : MonoBehaviour {
                     }
                 } else
                 {
+                    Debug.Log("clicked on: " + hitInfo.collider.name);
                     Player.GoTo(hitInfo.point);
                 }
 

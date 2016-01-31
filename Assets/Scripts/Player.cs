@@ -48,6 +48,11 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (float.IsInfinity(agent.destination.x))
+        {
+            agent.destination = agent.transform.position;
+        }
+
         if (agent.isOnNavMesh && agent.remainingDistance <= agent.stoppingDistance)
         {
             targetIndicator.SetActive(false);
