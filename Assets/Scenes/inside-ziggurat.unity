@@ -1517,7 +1517,7 @@ MonoBehaviour:
   textOnMatch: If you don't, terrible things will happen! The skies will open and
     the seas will boil!
   textOnFail: 
-  instruction: game over
+  instruction: 
   other: {fileID: 0}
   match: 0
   done: 0
@@ -1888,7 +1888,7 @@ MonoBehaviour:
   textOnMatch: Everybody! The torches must be put out in the correct order. Repeat
     these mantras daily.
   textOnFail: 
-  instruction: game over
+  instruction: 
   other: {fileID: 0}
   match: 0
   done: 0
@@ -2109,6 +2109,10 @@ Prefab:
       propertyPath: textOnMatch
       value: I guess I've done these things every day for months now and none of you
         has died, so there must be something to it.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490976, guid: 8d0fa4795577542d3a962163a4a76503, type: 2}
+      propertyPath: instruction
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8d0fa4795577542d3a962163a4a76503, type: 2}
