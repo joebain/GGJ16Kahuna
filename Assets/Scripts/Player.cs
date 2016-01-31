@@ -79,14 +79,20 @@ public class Player : MonoBehaviour
 			{
 				log.actions.Add(otherLog.actionOnMatch);
 				otherLog.done = true;
+				instruction = otherLog.instruction; Debug.Log("set instruction to " + instruction);
 				StartCoroutine(TextBox(otherLog.textOnMatch));
 			}
 			else if (otherLog.textOnFail != null && otherLog.textOnFail.Length > 0)
 			{
 				StartCoroutine(TextBox(otherLog.textOnFail));
-				instruction = otherLog.instruction;
 			}
 		}
+	}
+
+	public void ShowTextBox(string report)
+	{
+		Debug.Log("start cor");
+		StartCoroutine(TextBox(report));
 	}
 
 	IEnumerator TextBox(string report)
@@ -94,6 +100,7 @@ public class Player : MonoBehaviour
 		t.text = report;
 
 		textBox.SetActive(true);
+		yield return null; 
 
 		while (!Input.anyKeyDown)
 		{
@@ -107,6 +114,7 @@ public class Player : MonoBehaviour
 		default: break;
 		case "open door":
 			{
+				Debug.Log("opening the door");
 				GameObject.Find("door_collision").SetActive(false);
 			} break;
 		}
