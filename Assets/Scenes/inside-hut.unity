@@ -1418,8 +1418,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 1
   quality: 1
-  blurArea: 4.12
-  maxBlurSize: 21.1
+  blurArea: 0
+  maxBlurSize: 2.2
   downsample: 0
   tiltShiftShader: {fileID: 4800000, guid: bf34d2a25450349699e8ae6456fa7ca9, type: 3}
 --- !u!1 &892002165
