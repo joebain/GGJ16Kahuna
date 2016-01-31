@@ -58,7 +58,11 @@ public class Torch : MonoBehaviour
         if (PlayerNear)
         {
             if (Active)
-            {
+			{
+
+				if (phase == 1) 
+					player.ShowTextBox("If I light them all first, then I can put them out in the right order.");
+				
 				if (phase == 0)
 				{
 					switch (name)
@@ -128,9 +132,6 @@ public class Torch : MonoBehaviour
 						} break;
 					}
 				}
-
-				if (phase == 1) 
-					player.ShowTextBox("If I light them all first, then I can put them out in the right order.");
             } 
 			else
             {
