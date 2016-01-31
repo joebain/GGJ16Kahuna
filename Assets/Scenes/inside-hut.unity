@@ -1790,7 +1790,7 @@ GameObject:
   - 4: {fileID: 1029989217}
   - 114: {fileID: 1029989219}
   - 65: {fileID: 1029989218}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: torch_logic_door2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2646,7 +2646,7 @@ GameObject:
   - 4: {fileID: 1583915864}
   - 114: {fileID: 1583915866}
   - 65: {fileID: 1583915865}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: torch_logic_door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
