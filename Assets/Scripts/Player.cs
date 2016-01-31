@@ -140,7 +140,7 @@ public class Player : MonoBehaviour
 		textBox.SetActive(true);
 		yield return null; 
 
-		while (!Input.anyKeyDown || Time.timeSinceLevelLoad < timeBox + 1f)
+		while (!Input.anyKeyDown || Time.timeSinceLevelLoad < timeBox + 0.5f)
 		{
 			yield return null; 
 		}
