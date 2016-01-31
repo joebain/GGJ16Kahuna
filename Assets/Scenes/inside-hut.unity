@@ -149,6 +149,68 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 65966801}
   m_Mesh: {fileID: 4300000, guid: d9b0ffe824ab1fd4daebb9130f077f85, type: 3}
+--- !u!1 &160149912
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 160149913}
+  - 114: {fileID: 160149915}
+  - 65: {fileID: 160149914}
+  m_Layer: 0
+  m_Name: torch_logic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &160149913
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 160149912}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.66, y: 2.6676335, z: -27.15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1718612193}
+  m_RootOrder: 6
+--- !u!65 &160149914
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 160149912}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.3339815, y: 5.10878, z: 8.705973}
+  m_Center: {x: -0.17018557, y: -0.7415254, z: 0.16256905}
+--- !u!114 &160149915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 160149912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b166409984d8a04418dd7d7036386ff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actions:
+  - washed_hands_2
+  actionOnMatch: torches_relight
+  textOnMatch: If I light them again, then I'll be able to douse them properly this
+    time.
+  textOnFail: 
+  instruction: 
+  other: {fileID: 0}
+  match: 0
+  done: 0
 --- !u!1 &169058088
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,11 +594,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 148280, guid: 1d502eb4a865d3d4f98f58fed1d3cce8, type: 2}
       propertyPath: m_Name
-      value: Torch (2)
+      value: Torch2
       objectReference: {fileID: 0}
     - target: {fileID: 148280, guid: 1d502eb4a865d3d4f98f58fed1d3cce8, type: 2}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490972, guid: 1d502eb4a865d3d4f98f58fed1d3cce8, type: 2}
+      propertyPath: logic
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490972, guid: 1d502eb4a865d3d4f98f58fed1d3cce8, type: 2}
+      propertyPath: torchNum
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d502eb4a865d3d4f98f58fed1d3cce8, type: 2}
@@ -646,11 +716,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 148280, guid: 1d502eb4a865d3d4f98f58fed1d3cce8, type: 2}
       propertyPath: m_Name
-      value: Torch (1)
+      value: Torch1
       objectReference: {fileID: 0}
     - target: {fileID: 148280, guid: 1d502eb4a865d3d4f98f58fed1d3cce8, type: 2}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490972, guid: 1d502eb4a865d3d4f98f58fed1d3cce8, type: 2}
+      propertyPath: logic
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490972, guid: 1d502eb4a865d3d4f98f58fed1d3cce8, type: 2}
+      propertyPath: torchNum
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d502eb4a865d3d4f98f58fed1d3cce8, type: 2}
@@ -730,6 +808,68 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1339253299}
   m_RootOrder: 1
+--- !u!1 &643779884
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 643779885}
+  - 114: {fileID: 643779887}
+  - 65: {fileID: 643779886}
+  m_Layer: 0
+  m_Name: sink_logic2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &643779885
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 643779884}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.3500004, y: 2.6676335, z: -23.86}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1718612193}
+  m_RootOrder: 5
+--- !u!65 &643779886
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 643779884}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.3339815, y: 5.10878, z: 4.1849113}
+  m_Center: {x: -0.17018557, y: -0.7415254, z: 0.3039055}
+--- !u!114 &643779887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 643779884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b166409984d8a04418dd7d7036386ff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actions:
+  - door_tried_3
+  actionOnMatch: washed_hands_2
+  textOnMatch: OK. All clean. Let me check the torches before I go, I might have left
+    one smouldering.
+  textOnFail: 
+  instruction: 
+  other: {fileID: 0}
+  match: 0
+  done: 0
 --- !u!1 &677196868
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,6 +945,67 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!1 &745870210
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 745870211}
+  - 114: {fileID: 745870213}
+  - 65: {fileID: 745870212}
+  m_Layer: 2
+  m_Name: door_logic4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &745870211
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 745870210}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.96, y: 2.667634, z: -16.13}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1718612193}
+  m_RootOrder: 8
+--- !u!65 &745870212
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 745870210}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9633852, y: 6.23361, z: 5.1691394}
+  m_Center: {x: -0.22276497, y: -0.17911029, z: -0.18820953}
+--- !u!114 &745870213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 745870210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b166409984d8a04418dd7d7036386ff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actions:
+  - torches_doused2
+  actionOnMatch: door_tried_4
+  textOnMatch: Ugh, I'm sure my hands are filthy from those torches.
+  textOnFail: 
+  instruction: 
+  other: {fileID: 0}
+  match: 0
+  done: 0
 --- !u!1 &762707436
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,6 +1145,67 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 769831777}
   m_Mesh: {fileID: 4300000, guid: d9b0ffe824ab1fd4daebb9130f077f85, type: 3}
+--- !u!1 &783153488
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 783153489}
+  - 114: {fileID: 783153491}
+  - 65: {fileID: 783153490}
+  m_Layer: 2
+  m_Name: door_logic2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &783153489
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 783153488}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.96, y: 2.667634, z: -16.13}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1718612193}
+  m_RootOrder: 3
+--- !u!65 &783153490
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 783153488}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9633852, y: 6.23361, z: 5.1691394}
+  m_Center: {x: -0.22276497, y: -0.17911029, z: -0.18820953}
+--- !u!114 &783153491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 783153488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b166409984d8a04418dd7d7036386ff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actions:
+  - washed_hands_1
+  actionOnMatch: door_tried_2
+  textOnMatch: Ah, I'd better put out the torches.
+  textOnFail: 
+  instruction: 
+  other: {fileID: 0}
+  match: 0
+  done: 0
 --- !u!1 &792318275
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,9 +1579,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 933902796}
-  m_LocalRotation: {x: 0.00000011520232, y: -0.7071067, z: -0.7071068, w: -0.00000011520232}
-  m_LocalPosition: {x: -0.3118725, y: -0.0067245956, z: -0.18080318}
-  m_LocalScale: {x: 1.4851108, y: 0.106207214, z: 0.22414963}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.96, y: 2.667634, z: -16.13}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1718612193}
   m_RootOrder: 1
@@ -1408,6 +1670,7 @@ GameObject:
   - 4: {fileID: 1014694443}
   - 65: {fileID: 1014694444}
   - 54: {fileID: 1014694445}
+  - 208: {fileID: 1014694446}
   m_Layer: 0
   m_Name: door_collision
   m_TagString: Untagged
@@ -1421,9 +1684,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1014694442}
-  m_LocalRotation: {x: 0.00000011520232, y: -0.7071067, z: -0.7071068, w: -0.00000011520232}
-  m_LocalPosition: {x: -0.3118725, y: -0.0067245956, z: -0.18080318}
-  m_LocalScale: {x: 1.4851108, y: 0.106207214, z: 0.22414963}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.96, y: 2.667634, z: -16.13}
+  m_LocalScale: {x: 1.1765944, y: 17.378128, z: 8.579842}
   m_Children: []
   m_Father: {fileID: 1718612193}
   m_RootOrder: 2
@@ -1437,8 +1700,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5965261, y: 10.242052, z: 5.04625}
-  m_Center: {x: -0.2017355, y: 2.4680588, z: 0.010686874}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1014694445
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1454,6 +1717,84 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!208 &1014694446
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1014694442}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
+--- !u!1 &1114293936
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1114293937}
+  - 114: {fileID: 1114293939}
+  - 65: {fileID: 1114293938}
+  m_Layer: 2
+  m_Name: door_logic3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1114293937
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1114293936}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.96, y: 2.667634, z: -16.13}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1718612193}
+  m_RootOrder: 4
+--- !u!65 &1114293938
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1114293936}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9633852, y: 6.23361, z: 5.1691394}
+  m_Center: {x: -0.22276497, y: -0.17911029, z: -0.18820953}
+--- !u!114 &1114293939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1114293936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b166409984d8a04418dd7d7036386ff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actions:
+  - door_tried_2
+  - torches_doused
+  actionOnMatch: door_tried_3
+  textOnMatch: Hmm - my hands are dirty again. Don't want to spread anything. Better
+    wash them.
+  textOnFail: 
+  instruction: 
+  other: {fileID: 0}
+  match: 0
+  done: 0
 --- !u!1 &1153760751
 GameObject:
   m_ObjectHideFlags: 0
@@ -1487,7 +1828,7 @@ MonoBehaviour:
   actionOnMatch: washed_hands_1
   textOnMatch: OK, I've washed my hands. They should be free from disease now.
   textOnFail: 
-  instruction: open door
+  instruction: 
   other: {fileID: 0}
   match: 0
   done: 0
@@ -1497,9 +1838,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1153760751}
-  m_LocalRotation: {x: 0.00000011520232, y: -0.7071067, z: -0.7071068, w: -0.00000011520232}
-  m_LocalPosition: {x: -24.53403, y: -1.7394011, z: -0.1808039}
-  m_LocalScale: {x: 1.4851108, y: 0.106207214, z: 0.22414963}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.3500004, y: 2.6676335, z: -23.86}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1718612193}
   m_RootOrder: 0
@@ -1515,6 +1856,67 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.3339815, y: 5.10878, z: 4.1849113}
   m_Center: {x: -0.17018557, y: -0.7415254, z: 0.3039055}
+--- !u!1 &1177753865
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1177753866}
+  - 114: {fileID: 1177753868}
+  - 65: {fileID: 1177753867}
+  m_Layer: 2
+  m_Name: door_logic5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1177753866
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1177753865}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.96, y: 2.667634, z: -16.13}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1718612193}
+  m_RootOrder: 7
+--- !u!65 &1177753867
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1177753865}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9633852, y: 6.23361, z: 5.1691394}
+  m_Center: {x: -0.22276497, y: -0.17911029, z: -0.18820953}
+--- !u!114 &1177753868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1177753865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b166409984d8a04418dd7d7036386ff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actions:
+  - washed_hands_3
+  actionOnMatch: door_tried_5
+  textOnMatch: Okay, torches out, hands clean, let's go.
+  textOnFail: 
+  instruction: open door
+  other: {fileID: 0}
+  match: 0
+  done: 0
 --- !u!1 &1284207270
 GameObject:
   m_ObjectHideFlags: 0
@@ -2221,13 +2623,20 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1718612192}
-  m_LocalRotation: {x: -0.00000011520232, y: 0.7071067, z: 0.7071068, w: -0.00000011520232}
-  m_LocalPosition: {x: -9.17, y: 4.3699965, z: -16.099998}
-  m_LocalScale: {x: 0.67335045, y: 4.4613066, z: 9.415558}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1153760753}
   - {fileID: 933902799}
   - {fileID: 1014694443}
+  - {fileID: 783153489}
+  - {fileID: 1114293937}
+  - {fileID: 643779885}
+  - {fileID: 160149913}
+  - {fileID: 1177753866}
+  - {fileID: 745870211}
+  - {fileID: 2144552728}
   m_Father: {fileID: 0}
   m_RootOrder: 14
 --- !u!1 &1754319036
@@ -2399,6 +2808,18 @@ Prefab:
     - target: {fileID: 148280, guid: 1d502eb4a865d3d4f98f58fed1d3cce8, type: 2}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490972, guid: 1d502eb4a865d3d4f98f58fed1d3cce8, type: 2}
+      propertyPath: logic
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490972, guid: 1d502eb4a865d3d4f98f58fed1d3cce8, type: 2}
+      propertyPath: torchNum
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 148280, guid: 1d502eb4a865d3d4f98f58fed1d3cce8, type: 2}
+      propertyPath: m_Name
+      value: Torch0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d502eb4a865d3d4f98f58fed1d3cce8, type: 2}
@@ -2796,7 +3217,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2080365595}
   m_LocalRotation: {x: 1.4210855e-14, y: 1, z: 0, w: -0.00000016292068}
-  m_LocalPosition: {x: -5, y: -1.32, z: -4.349997}
+  m_LocalPosition: {x: -5.51, y: -1.32, z: -4.349997}
   m_LocalScale: {x: 0.67335045, y: 4.4613066, z: 9.415558}
   m_Children: []
   m_Father: {fileID: 1441516114}
@@ -2983,3 +3404,64 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
+--- !u!1 &2144552727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2144552728}
+  - 114: {fileID: 2144552730}
+  - 65: {fileID: 2144552729}
+  m_Layer: 0
+  m_Name: sink_logic3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2144552728
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2144552727}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.3500004, y: 2.6676335, z: -23.86}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1718612193}
+  m_RootOrder: 9
+--- !u!65 &2144552729
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2144552727}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.3339815, y: 5.10878, z: 4.1849113}
+  m_Center: {x: -0.17018557, y: -0.7415254, z: 0.3039055}
+--- !u!114 &2144552730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2144552727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b166409984d8a04418dd7d7036386ff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actions:
+  - door_tried_4
+  actionOnMatch: washed_hands_3
+  textOnMatch: Phew... a bit raw from scrubbing, but I think they're clean now.
+  textOnFail: 
+  instruction: 
+  other: {fileID: 0}
+  match: 0
+  done: 0
