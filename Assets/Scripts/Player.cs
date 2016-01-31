@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
 	GameObject textBox;
 	Text t;
 
-    SFX sfx;
+    public SFX sfx;
 	string instruction;
 
     void Start()
@@ -80,7 +80,8 @@ public class Player : MonoBehaviour
 				log.actions.Add(otherLog.actionOnMatch);
 				otherLog.done = true;
 				instruction = otherLog.instruction; Debug.Log("set instruction to " + instruction);
-				StartCoroutine(TextBox(otherLog.textOnMatch));
+                sfx.PlayPositive();
+                StartCoroutine(TextBox(otherLog.textOnMatch));
 			}
 			else if (otherLog.textOnFail != null && otherLog.textOnFail.Length > 0)
 			{
@@ -89,9 +90,16 @@ public class Player : MonoBehaviour
 		}
 	}
 
-	public void ShowTextBox(string report)
+	public void ShowTextBox(string report, bool negative = false)
 	{
 		Debug.Log("start cor");
+        if (negative)
+        {
+            sfx.PlayDiscord();
+        } else
+        {
+            sfx.PlayPositive();
+        }
 		StartCoroutine(TextBox(report));
 	}
 
