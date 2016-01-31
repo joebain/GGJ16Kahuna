@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
 	GameObject textBox;
 	Text t;
 
+    SFX sfx;
+
     void Start()
     {
 		log = gameObject.AddComponent<SuccessfulActionLog>();
@@ -25,7 +27,9 @@ public class Player : MonoBehaviour
         targetIndicator = transform.Find("Target").gameObject;
         targetIndicator.SetActive(false);
 
-		textBox = GameObject.Find("textbox");
+        sfx = transform.Find("SFX").GetComponent<SFX>();
+
+        textBox = GameObject.Find("textbox");
 		t = GameObject.Find("report").GetComponent<Text>();
 		textBox.SetActive(false);
 	}
@@ -40,9 +44,12 @@ public class Player : MonoBehaviour
     public void GoTo(Vector3 position)
     {
         if (float.IsInfinity(position.x)) { return; }
+
         agent.destination = position;
         targetIndicator.transform.position = position;
         targetIndicator.SetActive(true);
+
+        sfx.PlayHit();
     }
 
     void Update()
