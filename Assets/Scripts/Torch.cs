@@ -90,7 +90,8 @@ public class Torch : MonoBehaviour
 							{
 								TurnOff();
 								player.ShowTextBox("There. Everyone will be safe now.");
-								phase = 1;
+                                    player.log.actions.Add("torches_doused");
+                                    phase = 1;
 							}
 							else
 								player.ShowTextBox("This is not the order in which the torches should be doused.", true);
@@ -124,7 +125,8 @@ public class Torch : MonoBehaviour
 							{
 								TurnOff();
 								player.ShowTextBox("OK. I think I put them out properly that time.");
-								phase = 3;
+                                    player.log.actions.Add("torches_doused2");
+                                    phase = 3;
 							}
 							else
 								player.ShowTextBox("It goes middle, right, left. Then I can leave.", true);
