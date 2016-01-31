@@ -62,8 +62,8 @@ public class Torch : MonoBehaviour
 
 				if (phase == 1) 
 					player.ShowTextBox("If I light them all first, then I can put them out in the right order.");
-				
-				if (phase == 0)
+                    
+                if (phase == 0)
 				{
 					switch (name)
 					{
@@ -74,7 +74,8 @@ public class Torch : MonoBehaviour
 							if (!torches[1].Active && torches[2].Active)
 								TurnOff();
 							else
-								player.ShowTextBox("Oh no, I need to douse the middle torch first.");
+								player.ShowTextBox("Oh no, I need to douse the middle torch first.", true);
+                                
 						} break;
 					case "Torch1":
 						{
@@ -89,12 +90,11 @@ public class Torch : MonoBehaviour
 							{
 								TurnOff();
 								player.ShowTextBox("There. Everyone will be safe now.");
-								player.log.actions.Add("torches_doused");
 								phase = 1;
 							}
 							else
-								player.ShowTextBox("This is not the order in which the torches should be doused.");
-						} break;
+								player.ShowTextBox("This is not the order in which the torches should be doused.", true);
+                            } break;
 					}
 				}
 
@@ -109,8 +109,8 @@ public class Torch : MonoBehaviour
 							if (!torches[1].Active && torches[2].Active)
 								TurnOff();
 							else
-								player.ShowTextBox("I need to douse the middle torch first.");
-						} break;
+								player.ShowTextBox("I need to douse the middle torch first.", true);
+                            } break;
 					case "Torch1":
 						{
 							if (torches[0].Active && torches[2].Active)
@@ -124,12 +124,11 @@ public class Torch : MonoBehaviour
 							{
 								TurnOff();
 								player.ShowTextBox("OK. I think I put them out properly that time.");
-								player.log.actions.Add("torches_doused2");
 								phase = 3;
 							}
 							else
-								player.ShowTextBox("It goes middle, right, left. Then I can leave.");
-						} break;
+								player.ShowTextBox("It goes middle, right, left. Then I can leave.", true);
+                            } break;
 					}
 				}
             } 
@@ -166,6 +165,7 @@ public class Torch : MonoBehaviour
         ParticleSystem.EmissionModule emission = particles.emission;
         emission.enabled = false;
         light.gameObject.SetActive(false);
+        player.sfx.PlayPositive();
         Active = false;
     }
 
@@ -175,5 +175,6 @@ public class Torch : MonoBehaviour
         emission.enabled = true;
         Active = true;
 		light.gameObject.SetActive(true);
+        player.sfx.PlayPositive();
     }
 }

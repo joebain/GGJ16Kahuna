@@ -1223,6 +1223,7 @@ GameObject:
   - 45: {fileID: 1383950538}
   - 114: {fileID: 1383950544}
   - 114: {fileID: 1383950545}
+  - 114: {fileID: 1383950546}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1337,11 +1338,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   threshold: 0.433
-  intensity: 0.59
+  intensity: 0.31
   blurSize: 1.91
   blurIterations: 1
   blurType: 0
   fastBloomShader: {fileID: 4800000, guid: 68a00c837b82e4c6d92e7da765dc5f1d, type: 3}
+--- !u!114 &1383950546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1383950537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83d8db0ec466c14429f58c68c16398a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quality: 1
+  resolution: 3
+  simpleTweakMode: 1
+  focalPoint: 68
+  smoothness: 0.5
+  focalZDistance: 0
+  focalZStartCurve: 1
+  focalZEndCurve: 1
+  objectFocus: {fileID: 0}
+  focalSize: 0
+  bluriness: 2
+  maxBlurSpread: 1.75
+  foregroundBlurExtrude: 1.15
+  dofBlurShader: {fileID: 4800000, guid: bb4af680337344a4abad65a4e8873c50, type: 3}
+  dofShader: {fileID: 4800000, guid: 987fb0677d01f43ce8a9dbf12271e668, type: 3}
+  visualize: 0
+  bokehDestination: 1
+  bokeh: 1
+  bokehSupport: 1
+  bokehShader: {fileID: 4800000, guid: 57cdacf9b217546aaa18edf39a6151c0, type: 3}
+  bokehTexture: {fileID: 2800000, guid: fc00ec05a89da4ff695a4273715cd5ce, type: 3}
+  bokehScale: 2.4
+  bokehIntensity: 0.15
+  bokehThresholdContrast: 0.1
+  bokehThresholdLuminance: 0.55
+  bokehDownsample: 1
 --- !u!1 &1428530230
 GameObject:
   m_ObjectHideFlags: 0
@@ -2080,14 +2118,14 @@ Light:
   serializedVersion: 6
   m_Type: 1
   m_Color: {r: 0.9632353, g: 0.7365917, b: 0.9523127, a: 1}
-  m_Intensity: 1.62
+  m_Intensity: 0.86
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
     m_Resolution: -1
-    m_Strength: 0.217
+    m_Strength: 0.089
     m_Bias: 0.05
     m_NormalBias: 0
     m_NearPlane: 0.75

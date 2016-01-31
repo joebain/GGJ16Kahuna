@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
 	GameObject textBox;
 	Text t;
 
-    SFX sfx;
+    public SFX sfx;
 	string instruction;
 
     void Start()
@@ -85,6 +85,7 @@ public class Player : MonoBehaviour
 				instruction = otherLog.instruction; Debug.Log("set instruction to " + instruction);
 				bool skip = false;
 				if (instruction == "skip if torches doused" && Torch.phase == 3) skip = true;
+				sfx.PlayPositive();
 				if (!skip)
 					StartCoroutine(TextBox(otherLog.textOnMatch));
 			}
@@ -95,33 +96,16 @@ public class Player : MonoBehaviour
 		}
 	}
 
-
-
-	void OnTriggerStay(Collider other)
-	{
-		SuccessfulActionLog otherLog = other.gameObject.GetComponent<SuccessfulActionLog>();
-		if (otherLog != null && !otherLog.done && !textBox.activeSelf)
-		{
-			if (otherLog.TestAgainst(log))
-			{
-				log.actions.Add(otherLog.actionOnMatch);
-				otherLog.done = true;
-				instruction = otherLog.instruction; Debug.Log("set instruction to " + instruction);
-				bool skip = false;
-				if (instruction == "skip if torches doused" && Torch.phase == 3) skip = true;
-				if (!skip)
-					StartCoroutine(TextBox(otherLog.textOnMatch));
-			}
-			else if (otherLog.textOnFail != null && otherLog.textOnFail.Length > 0)
-			{
-				StartCoroutine(TextBox(otherLog.textOnFail));
-			}
-		}
-	}
-
-	public void ShowTextBox(string report)
+	public void ShowTextBox(string report, bool negative = false)
 	{
 		Debug.Log("start cor");
+        if (negative)
+        {
+            sfx.PlayDiscord();
+        } else
+        {
+            sfx.PlayPositive();
+        }
 		StartCoroutine(TextBox(report));
 	}
 
