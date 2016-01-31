@@ -85,6 +85,34 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 23800000, guid: 8706f545df50ac342bab2094a84c9a5b, type: 2}
+--- !u!1 &155324156
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 155324157}
+  m_Layer: 0
+  m_Name: Logic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &155324157
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 155324156}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1271432266}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
 --- !u!1001 &205937647
 Prefab:
   m_ObjectHideFlags: 0
@@ -765,6 +793,67 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1199796823}
   m_Mesh: {fileID: 4300000, guid: d91bb680fbfa7d24bbb73e38b9789c4e, type: 3}
+--- !u!1 &1271432265
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1271432266}
+  - 114: {fileID: 1271432268}
+  - 65: {fileID: 1271432267}
+  m_Layer: 0
+  m_Name: path_logic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1271432266
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1271432265}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -21.6, y: 2.6676335, z: -18.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 155324157}
+  m_RootOrder: 0
+--- !u!65 &1271432267
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1271432265}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.3339815, y: 5.10878, z: 4.1849113}
+  m_Center: {x: -0.17018557, y: -0.7415254, z: 0.3039055}
+--- !u!114 &1271432268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1271432265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b166409984d8a04418dd7d7036386ff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actions:
+  - 
+  actionOnMatch: path_tried
+  textOnMatch: Ah - look at that overhanging branch! It will be safer to go around.
+  textOnFail: 
+  instruction: 
+  other: {fileID: 0}
+  match: 0
+  done: 0
 --- !u!1 &1324003698
 GameObject:
   m_ObjectHideFlags: 0
