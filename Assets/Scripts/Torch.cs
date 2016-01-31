@@ -27,7 +27,7 @@ public class Torch : MonoBehaviour
         {
             glowMaterials[m] = glow;
         }
-        TurnOff();
+        TurnOn();
     }
 
     void OnTriggerEnter(Collider other)

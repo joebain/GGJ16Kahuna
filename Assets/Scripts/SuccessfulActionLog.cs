@@ -10,6 +10,7 @@ public class SuccessfulActionLog : MonoBehaviour {
 	public string actionOnMatch;
 	public string textOnMatch;
 	public string textOnFail;
+	public string instruction;
 
 	public SuccessfulActionLog other;
 	public bool match = false;
