@@ -17,11 +17,8 @@ public class Player : MonoBehaviour
 	GameObject textBox;
 	Text t;
 
-<<<<<<< HEAD
     SFX sfx;
-=======
 	string instruction;
->>>>>>> 666c642276a4542376a82f2be7b93c40843aaab6
 
     void Start()
     {
